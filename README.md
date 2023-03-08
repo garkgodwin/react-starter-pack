@@ -12,11 +12,15 @@ npm install
 
 ## Usage
 
-```bash
 for development:
-npm run dev
 
-or for production:
+```bash
+npm run dev
+```
+
+for production:
+
+```bash
 npm run build
 ```
 

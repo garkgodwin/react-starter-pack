@@ -25,6 +25,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
+          options: {
+            babelrc: true,
+          },
         },
       },
       {
@@ -38,7 +41,9 @@ module.exports = {
     ],
   },
   // module - are loaders to handle other files
-
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "React Starter Pack",

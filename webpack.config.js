@@ -38,10 +38,6 @@ module.exports = {
         test: /\.(svg|ico|png|webp|jpg|gif|jpeg)$/,
         type: "asset/resource",
       },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
-      },
     ],
   },
   // module - are loaders to handle other files

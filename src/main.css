@@ -5,9 +5,21 @@
   --color-4: #000000; /* 5% */
 }
 
+@font-face {
+  font-family: "RobotoRegular";
+  src: local("RobotoRegular"),
+    url("./fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: local("RobotoMedium"),
+    url("./fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+}
+
 html,
 body,
-#root {
+#root,
+.App {
   background-color: var(--color-1);
   min-height: 100vh;
   max-width: 100vw;
@@ -17,4 +29,18 @@ body,
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "RobotoRegular";
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+.App.app-authed {
+  flex-direction: row;
+}
+
+.Page {
+  background-color: var(--color-1);
+  min-height: 90vh;
 }

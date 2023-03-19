@@ -6,7 +6,7 @@
   3. All data fetched in API must be saved in the "STORE".
 */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import GuestPages from "./pages/guest-pages";
 import AuthedPages from "./pages/authed-pages";
@@ -14,20 +14,24 @@ import Navbar from "./components/navbar";
 import Sidebar from "./components/sidebar";
 
 const App = () => {
+  const [isLogged, setIsLogged] = useState(false);
   // AUTHENTICATE
   // FETCH DATA
   // SAVE TO STORE
-  useEffect(() => {}, []);
-
   return (
-    <div>
-      <Sidebar />
-      <Navbar />
-      <main>
-        <GuestPages />
-        <AuthedPages />
-      </main>
-    </div>
+    <main className={"App" + (isLogged ? " app-authed" : "")}>
+      {isLogged ? (
+        <>
+          <Sidebar />
+          <AuthedPages />
+        </>
+      ) : (
+        <>
+          <Navbar />
+          <GuestPages />
+        </>
+      )}
+    </main>
   );
 };
 

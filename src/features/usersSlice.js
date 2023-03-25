@@ -13,7 +13,6 @@ const initialState = {
   list: [],
   selected: null,
   inputs: null,
-  outputs: null,
 };
 
 export const slice = createSlice({

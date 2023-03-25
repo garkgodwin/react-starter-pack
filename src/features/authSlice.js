@@ -1,5 +1,9 @@
 /*
   This slice will contain the authentication needed for this application
+  reducers:
+    1. login: gets the payload with user details and token, saves the token to local storage and details to state
+    2. logout: removes the state from auth and clears local storage.
+    3. authenticate: called by async authenticate
 */
 import { createSlice } from "@reduxjs/toolkit";
 

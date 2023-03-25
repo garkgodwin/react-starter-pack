@@ -21,7 +21,6 @@ import { authenticate } from "./features/authSlice";
 const App = () => {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const [isLogged, setIsLogged] = useState(false);
   // AUTHENTICATE
   // FETCH DATA
   // SAVE TO STORE
@@ -31,19 +30,13 @@ const App = () => {
     authenticateToken();
   }, []);
 
-  // if auth changes, isLogged state will change
-  useEffect(() => {
-    if (auth.user) setIsLogged(true);
-    else setIsLogged(false);
-  }, [auth]);
-
   // call "authenticate" from "auth reducers"
   const authenticateToken = () => {
     dispatch(authenticate());
   };
   return (
-    <div className={"App" + (isLogged ? " app-authed" : "")}>
-      {isLogged ? <Sidebar /> : <Navbar />}
+    <div className={"App" + (auth.user ? " app-authed" : "")}>
+      {auth.user ? <Sidebar /> : <Navbar />}
       <Outlet />
     </div>
   );

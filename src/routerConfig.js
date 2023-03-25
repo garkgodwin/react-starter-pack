@@ -6,6 +6,12 @@ import App from "./App";
 import RootPage from "./pages/RootPage";
 import LoginPage from "./pages/LoginPage";
 
+/*
+  Routes
+    /         - (App, RootPage)
+    /login    - (LoginPage)
+*/
+
 const router = createBrowserRouter([
   {
     path: "/",

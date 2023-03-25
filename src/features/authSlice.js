@@ -9,7 +9,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   user: null,
-  token: null,
 };
 
 export const slice = createSlice({
@@ -20,10 +19,23 @@ export const slice = createSlice({
     logout: (state) => {
       localStorage.clear();
       state.user = null;
-      state.token = null;
     },
-    authenticate: (state, action) => {
-      const p = action.payload;
+    authenticate: (state) => {
+      const token = localStorage.getItem("token");
+      console.log(token);
+      if (token) {
+        if (typeof token === "string") {
+          if (token.length > 20) {
+            state.user = {}; // fetch user if token is not null
+          } else {
+            state.user = null;
+          }
+        } else {
+          state.user = null;
+        }
+      } else {
+        state.user = null;
+      }
     },
   },
 });

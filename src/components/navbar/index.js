@@ -11,6 +11,7 @@ const Navbar = () => {
       <div className="navbar-brand">Brand</div>
       <nav className="nav-items">
         <NavbarLink text="Home" link="/" />
+        <NavbarLink text="Login" link="/login" />
       </nav>
     </div>
   );

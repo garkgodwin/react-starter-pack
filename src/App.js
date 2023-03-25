@@ -7,9 +7,8 @@
 */
 
 import React, { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 
-import GuestPages from "./pages/guest-pages";
-import AuthedPages from "./pages/authed-pages";
 import Navbar from "./components/navbar";
 import Sidebar from "./components/sidebar";
 
@@ -19,19 +18,10 @@ const App = () => {
   // FETCH DATA
   // SAVE TO STORE
   return (
-    <main className={"App" + (isLogged ? " app-authed" : "")}>
-      {isLogged ? (
-        <>
-          <Sidebar />
-          <AuthedPages />
-        </>
-      ) : (
-        <>
-          <Navbar />
-          <GuestPages />
-        </>
-      )}
-    </main>
+    <div className={"App" + (isLogged ? " app-authed" : "")}>
+      {isLogged ? <Sidebar /> : <Navbar />}
+      <Outlet />
+    </div>
   );
 };
 

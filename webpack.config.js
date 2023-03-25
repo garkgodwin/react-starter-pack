@@ -17,6 +17,7 @@ module.exports = {
     port: 3000, // default is 8080
     open: true, // open default browser
     hot: true, // hot reload
+    historyApiFallback: true, // for route 404 error
   }, // settings of our dev server
   module: {
     rules: [

@@ -6,11 +6,13 @@
   3. All data fetched in API must be saved in the "STORE".
 */
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import Navbar from "./components/navbar";
 import Sidebar from "./components/sidebar";
+
+import "./pages/index.css";
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);

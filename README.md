@@ -31,6 +31,11 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-## License
+## Collaborators
+
+[Gark Godwin Duque](https://github.com/garkgodwin)
+[Brixter Porras](https://github.com/Brix101)
+
+## Links
 
 [My site](https://gark.vercel.app)

@@ -1,0 +1,1 @@
+6 - As a developer, I want to initialize the project - Completed before branch created

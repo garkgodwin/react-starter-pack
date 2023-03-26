@@ -6,8 +6,12 @@
     3. authenticate: called by async authenticate
 */
 import { createSlice } from "@reduxjs/toolkit";
+import persistReducer from "redux-persist/es/persistReducer";
+import storage from "redux-persist/lib/storage";
 
 const initialState = {
+  token:
+    "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huZG9lQGV4YW1wbGUuY29tIiwidXNlcl9pZCI6IjQzNmEwZjI1LTI1YTgtNDkzNS05MWUzLWZiZDEzNjk0MWRhYyIsImV4cCI6MTY3OTg1NjgxNn0.G9BmOk2bTy6vjYcW_eTtJjWtJnL4Tk6rzJmpAV-o4AY",
   user: null,
 };
 
@@ -16,13 +20,10 @@ export const slice = createSlice({
   initialState,
   reducers: {
     login: (state, payload) => {},
-    logout: (state) => {
-      localStorage.clear();
-      state.user = null;
-    },
+    logout: () => initialState,
     authenticate: (state) => {
-      const token = localStorage.getItem("token");
-      console.log(token);
+      const token = state.token;
+      console.log({ token });
       if (token) {
         if (typeof token === "string") {
           if (token.length > 20) {
@@ -40,7 +41,15 @@ export const slice = createSlice({
   },
 });
 
+export default persistReducer(
+  {
+    key: slice.name,
+    storage,
+    whitelist: ["token"],
+    // blacklist: [ ],
+  },
+  slice.reducer
+);
+
 // Action creators are generated for each case reducer function
 export const { login, logout, authenticate } = slice.actions;
-
-export default slice.reducer;

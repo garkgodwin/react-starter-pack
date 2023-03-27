@@ -8,6 +8,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
+import { login, logout } from "../app/services/authServices";
 
 const initialState = {
   token:
@@ -19,8 +20,10 @@ export const slice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    login: (state, payload) => {},
-    logout: () => initialState,
+    tokenReceived: (state, action) => {
+      state.token = action.payload;
+    },
+    loggedOut: () => initialState,
     authenticate: (state) => {
       const token = state.token;
       console.log({ token });
@@ -28,17 +31,19 @@ export const slice = createSlice({
         if (typeof token === "string") {
           if (token.length > 20) {
             state.user = {}; // fetch user if token is not null
-          } else {
-            state.user = null;
           }
-        } else {
-          state.user = null;
         }
-      } else {
-        state.user = null;
       }
     },
   },
+  extraReducers: (builders) => {
+    builders.addMatcher(login.matchFulfilled, (state, action) => {
+      //TODO updated the token value here 
+      //get token value from action.payload = object struct from backend/server
+      state.token = action.payload;
+    });
+    builders.addMatcher(logout.matchFulfilled, () => initialState);
+  }
 });
 
 export default persistReducer(
@@ -52,4 +57,4 @@ export default persistReducer(
 );
 
 // Action creators are generated for each case reducer function
-export const { login, logout, authenticate } = slice.actions;
+export const { tokenReceived, loggedOut, authenticate } = slice.actions;

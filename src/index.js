@@ -9,7 +9,7 @@ import "./main.css";
 //? FONTS
 import "./fonts/Roboto/Roboto-Regular.ttf";
 //? STORE
-import { store } from "./store";
+import { store } from "./app/store";
 
 // ? redux persist for autosaving state to localstorage
 import { persistStore } from "redux-persist";

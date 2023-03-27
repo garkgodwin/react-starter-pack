@@ -8,13 +8,15 @@ import {
   REGISTER,
   REHYDRATE,
 } from "redux-persist";
-import auth from "./features/authSlice";
-import counter from "./features/counterSlice";
-import todos from "./features/todosSlice";
-import users from "./features/usersSlice";
+import auth from "../features/authSlice";
+import counter from "../features/counterSlice";
+import todos from "../features/todosSlice";
+import users from "../features/usersSlice";
+import api from "./api";
 
 export const store = configureStore({
   reducer: {
+    [api.reducerPath]: api.reducer,
     auth,
     counter,
     users,
@@ -33,6 +35,7 @@ export const store = configureStore({
           REGISTER,
         ],
       },
-    }).concat(logger),
-  // .concat(api.middleware),
+    })
+      .concat(api.middleware)
+      .concat(logger)
 });

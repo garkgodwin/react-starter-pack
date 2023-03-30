@@ -8,7 +8,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
-// import { login, logout } from "../app/services/authServices"; // this is removed since this is cause of error
+import { login, logout } from "../app/services/authServices"; // this is removed since this is cause of error
 
 const initialState = {
   token:

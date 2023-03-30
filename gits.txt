@@ -1,0 +1,6 @@
+Gark commands
+git ac [comment] - add all and commit
+git push -u origin [branch] - push to specific branch
+
+git checkout [branch] - goes to specific branch
+git rebase master - updates the current branch from master branch 

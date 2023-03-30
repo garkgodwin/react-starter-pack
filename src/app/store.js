@@ -12,7 +12,7 @@ import auth from "../features/authSlice";
 import counter from "../features/counterSlice";
 import todos from "../features/todosSlice";
 import users from "../features/usersSlice";
-// import api from "./services/api"; // removed since cause of error
+import api from "./services/api";
 
 export const store = configureStore({
   reducer: {

@@ -8,7 +8,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
-import { login, logout } from "../app/services/authServices";
+// import { login, logout } from "../app/services/authServices"; // this is removed since this is cause of error
 
 const initialState = {
   token:
@@ -38,12 +38,12 @@ export const slice = createSlice({
   },
   extraReducers: (builders) => {
     builders.addMatcher(login.matchFulfilled, (state, action) => {
-      //TODO updated the token value here 
+      //TODO updated the token value here
       //get token value from action.payload = object struct from backend/server
       state.token = action.payload;
     });
     builders.addMatcher(logout.matchFulfilled, () => initialState);
-  }
+  },
 });
 
 export default persistReducer(
@@ -57,4 +57,5 @@ export default persistReducer(
 );
 
 // Action creators are generated for each case reducer function
-export const { tokenReceived, loggedOut, authenticate } = slice.actions;
+export const { tokenReceived, loggedOut, authenticate } =
+  slice.actions;

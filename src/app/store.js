@@ -12,7 +12,7 @@ import auth from "../features/authSlice";
 import counter from "../features/counterSlice";
 import todos from "../features/todosSlice";
 import users from "../features/usersSlice";
-import api from "./services/api";
+// import api from "./services/api"; // removed since cause of error
 
 export const store = configureStore({
   reducer: {
@@ -37,5 +37,5 @@ export const store = configureStore({
       },
     })
       .concat(api.middleware)
-      .concat(logger)
+      .concat(logger),
 });

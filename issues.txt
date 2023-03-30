@@ -1,3 +1,0 @@
-6 - As a developer, I want to initialize the project - Completed before branch created
-7 - As a developer, I want to initialize the store - Completed before branch created
-8 - As a developer, I want to build the webpack configuration - Completed before branch created

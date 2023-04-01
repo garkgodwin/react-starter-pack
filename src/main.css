@@ -1,8 +1,9 @@
 :root {
-  --color-1: #f1f1f1; /* 60% */
+  --color-1: #e6e3e3; /* 60% */
   --color-2: #525252; /* 30% */
   --color-3: #124236; /* 5% */
   --color-4: #000000; /* 5% */
+  --color-white: #fff;
 }
 
 @font-face {

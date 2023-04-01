@@ -1,0 +1,51 @@
+.Form {
+  background-color: var(--color-1);
+  margin: 24px;
+  padding: 24px;
+  min-width: 400px;
+  box-shadow: 4px 4px 8px;
+  transition: all 0.3s ease-in-out;
+}
+.Form .form-submit {
+  background-color: var(--color-1);
+  outline: none;
+  border: 1px solid var(--color-3);
+  width: 180px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 8px;
+}
+.Form .form-submit:hover {
+  background-color: var(--color-3);
+  color: var(--color-1);
+}
+.FormInput {
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--color-white);
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.FormInput label,
+.FormInput input {
+  width: 100%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent;
+}
+.FormInput label {
+}
+.FormInput input {
+  padding: 2px 8px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color-3);
+}

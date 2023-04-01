@@ -19,6 +19,8 @@ import Sidebar from "./components/sidebar";
 
 import "./pages/index.css";
 
+import TestFormPage from "./components/forms/TestFormPage";
+
 const App = () => {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -29,6 +31,7 @@ const App = () => {
     <div className={"App" + (auth.user ? " app-authed" : "")}>
       {auth.user ? <Sidebar /> : <Navbar />}
       <Outlet />
+      <TestFormPage />
     </div>
   );
 };

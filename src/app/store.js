@@ -1,3 +1,14 @@
+/**
+ * @author Brixter
+ * @returns {configureStore} the global state configuration
+ * store.js is the global store configuration
+ * calls all the reducers from features
+ * calls the api reducer of services/api
+ * adds middleware
+
+ * TODO: add more comment here to make sense
+*/
+
 import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import {
@@ -8,17 +19,15 @@ import {
   REGISTER,
   REHYDRATE,
 } from "redux-persist";
-import auth from "../features/authSlice";
-import counter from "../features/counterSlice";
-import todos from "../features/todosSlice";
-import users from "../features/usersSlice";
-import api from "./services/api";
+import auth from "../features/auth/authSlice";
+import todos from "../features/todos/todosSlice";
+import users from "../features/users/usersSlice";
+import { api } from "./services/api";
 
 export const store = configureStore({
   reducer: {
     [api.reducerPath]: api.reducer,
     auth,
-    counter,
     users,
     todos,
   },

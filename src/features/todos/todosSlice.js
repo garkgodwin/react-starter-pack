@@ -1,12 +1,13 @@
-/*
-  This slice will contain all the data that are needed for the whole application
-  Reducers:
-    1. populate - populates an array depending
-    2. append - appends a data in an array
-    3. remove - removes a data from an array
-    4. select - selects the information
-    5. unSelect - unselects the data
-*/
+/**
+ * @author Gark
+ * @returns {populate} populates the list data
+ * @returns {append} appends the list data
+ * @returns {remove} removes one item from list
+ * @returns {select} select one item from list
+ * @returns {unSelect} unselect selected item from list
+ * @return {slice} the todos slice configuration
+ * TODO: add/update comments
+ */
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -16,7 +17,7 @@ const initialState = {
 };
 
 export const slice = createSlice({
-  name: "users",
+  name: "todos",
   initialState,
   reducers: {
     populate: (state, action) => {
